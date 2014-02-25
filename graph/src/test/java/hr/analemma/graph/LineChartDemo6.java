@@ -95,7 +95,7 @@ public class LineChartDemo6 extends ApplicationFrame {
     private JFreeChart createChart(final XYDataset dataset) {
         
         // create the chart...
-        final JFreeChart chart = ChartFactory.createXYLineChart(
+        final JFreeChart chart = ChartFactory.createScatterPlot(
             "Line Chart Demo 6",      // chart title
             "X",                      // x axis label
             "Y",                      // y axis label
@@ -105,7 +105,7 @@ public class LineChartDemo6 extends ApplicationFrame {
             true,                     // tooltips
             false                     // urls
         );
-
+/*
         // NOW DO SOME OPTIONAL CUSTOMISATION OF THE CHART...
         chart.setBackgroundPaint(Color.white);
 
@@ -128,7 +128,7 @@ public class LineChartDemo6 extends ApplicationFrame {
         final NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
         rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
         // OPTIONAL CUSTOMISATION COMPLETED.
-                
+ */               
         return chart;
         
     }
