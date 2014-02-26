@@ -118,7 +118,7 @@ public class FileParser {
 			}
 			else {
 				x.add(Integer.parseInt(line.substring(0, 8).trim())); // SIMNO
-				y.add(new BigDecimal(line.substring(153, 167).trim())); // Recovery time			
+				y.add(new BigDecimal(line.substring(160, 167).trim())); // Recovery time			
 			}
 		}
 		

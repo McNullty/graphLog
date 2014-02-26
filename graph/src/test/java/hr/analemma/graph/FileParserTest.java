@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.List;
 
-
 import hr.analemma.graph.FileParser.ParseData;
 
 import org.junit.Test;
@@ -26,10 +25,10 @@ public class FileParserTest {
 
 			ParseData pd = FileParser.parseFile(is);
 			assertNotNull(pd);
-			
+
 			List<Integer> x = pd.getAxisData().getxAxis();
 			List<BigDecimal> y = pd.getAxisData().getyAxis();
-			
+
 			assertNotNull(x);
 			assertNotNull(y);
 
@@ -46,4 +45,37 @@ public class FileParserTest {
 		}
 	}
 
+	@Test
+	public void testSwitchOff() {
+
+		try {
+			ClassLoader classloader =
+				Thread.currentThread().getContextClassLoader();
+			InputStream is =
+				classloader.getResourceAsStream("140210-151425_10.67.29.180_ipRec_EXTDIST00009_SwitchOff.log");
+
+			ParseData pd = FileParser.parseFile(is);
+			assertNotNull(pd);
+		}
+		catch (ParseException e) {
+			fail(e.getMessage());
+		}
+	}
+
+	@Test
+	public void testChangeRootSwitch() {
+
+		try {
+			ClassLoader classloader =
+				Thread.currentThread().getContextClassLoader();
+			InputStream is =
+				classloader.getResourceAsStream("140226-112237_10.67.29.180_ipRec_CFG02017_ChangeRootSwitch.log");
+
+			ParseData pd = FileParser.parseFile(is);
+			assertNotNull(pd);
+		}
+		catch (ParseException e) {
+			fail(e.getMessage());
+		}
+	}
 }
